@@ -1,17 +1,15 @@
 import React from 'react';
-import { Redirect } from 'react-router';
+import { Redirect } from 'react-router-dom';
 
 class StrictAccess extends React.Component {
   render () {
     const { user } = this.props;
     const { username, password } = user;
-    return (
-    <div>
-      { username === 'joao' && password === '1234'
-      ? <p>Welcome João</p>
-      : alert('Access denied') (<Redirect to="/" /> ) }
-    </div>
-    );
+    if (!(username === 'joao' && password === '1234')) {
+      alert('Access denied');
+      return(<Redirect to="/" />);
+    }
+    return (<p>Welcome João!</p>);
   }
 }
 
