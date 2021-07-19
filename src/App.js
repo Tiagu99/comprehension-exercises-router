@@ -6,11 +6,13 @@ import Users from './components/Users';
 
 class App extends Component {
   render() {
+    const user = { username: 'joao', password: '1234', };
     return (
       <BrowserRouter>
         <Link to='/'>Home</Link>
         <Link to='/about'>About</Link>
         <Link to='/users'>Users</Link>
+        <Link to='/stricaccess'>Strict Access</Link>
         <Switch>
           <Route path="/users/:id" render={ (props) => <Users {...props} greetingsMessage="Good Moring" /> } />
           <Route path="/about" component= { About } />
