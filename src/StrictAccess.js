@@ -3,7 +3,8 @@ import { Redirect } from 'react-router';
 
 class StrictAccess extends React.Component {
   render () {
-    const { username, password } = this.props;
+    const { user } = this.props;
+    const { username, password } = user;
     return (
     <div>
       { username === 'joao' && password === '1234'
